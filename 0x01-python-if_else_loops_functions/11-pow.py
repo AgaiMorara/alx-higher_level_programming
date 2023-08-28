@@ -10,4 +10,4 @@ def pow(a, b):
     else:
         for _ in range(-b):
             result /= a
-    return result
+    return round(result,20)
