@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    """ Empty Class: docstrings should be habitual """
+    """A simple class that defines a Square"""
     pass
