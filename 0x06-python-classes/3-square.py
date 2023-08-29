@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ We further improve the square to include a method to calc area """
 
+
 class Square:
     """
     Represents a square with a size attribute and an area method.
