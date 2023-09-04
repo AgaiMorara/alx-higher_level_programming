@@ -11,8 +11,10 @@ width must be an integer.
 class Rectangle:
     ''' width and height here comply with assertions'''
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.__width = 0
+        self.__height = 0
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
