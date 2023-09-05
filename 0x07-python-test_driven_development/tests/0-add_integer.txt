@@ -1,7 +1,7 @@
-The ``add_integer`` module
+The ``0-add_integer`` module
 ===========================
 
-Using ``add_integer``
+Using ``0-add_integer``
 ----------------------
 
 This is an example text file for testing the `0-add_integer` module. First, import the `add_integer` function from the module:
@@ -25,14 +25,14 @@ Attempting to add a non-integer:
     >>> add_integer('a')
     Traceback (most recent call last):
     ...
-    TypeError: a must be an integer or b must be an integer
+    TypeError: a must be an integer
 
 Attempting to add a mixed type:
 
     >>> add_integer(5, 'abc')
     Traceback (most recent call last):
     ...
-    TypeError: a must be an integer or b must be an integer
+    TypeError: b must be an integer
 
 Adding two negative integers:
 
@@ -48,4 +48,8 @@ Adding two zeros:
 
     >>> add_integer(0, 0)
     0
-
+Adding NULL Values:
+    >>> add_integer (NULL)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an int
