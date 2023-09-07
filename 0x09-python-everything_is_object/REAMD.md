@@ -1,0 +1,3 @@
+Everything indeed is an object...
+We examine the behaviour of mutables and immutables in python... ( Namespaces,
+and what they refer to)
