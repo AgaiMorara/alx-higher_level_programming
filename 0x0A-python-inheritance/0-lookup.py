@@ -4,6 +4,7 @@ defines a function that returns the list of available attributes and methods of
 an object
 """
 
+
 def lookup(obj):
     '''
     lookup : function that looks into the methods and attributes of an object
