@@ -1,0 +1,30 @@
+Implementation manual for the BaseGeometry Class
+================================================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Create an instance of BaseGeometry
+>>> figure = BaseGeometry()
+
+# Test the integer_validator method
+# Value passed is a negative integer, should raise a ValueError
+>>> figure.integer_validator('y', -250)
+Traceback (most recent call last):
+    ...
+ValueError: y must be greater than 0
+
+# Value passed is a normal integer, should not raise any exceptions
+>>> figure.integer_validator('x', 250)
+
+# When None is passed, should raise a TypeError
+>>> figure.integer_validator('z', None)
+Traceback (most recent call last):
+    ...
+TypeError: z must be an integer
+
+
+# Test the area method, which is not implemented yet, should raise an Exception
+>>> figure.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
