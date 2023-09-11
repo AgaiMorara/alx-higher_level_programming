@@ -2,6 +2,8 @@
 """
 checks if an object is an instance of , or inherits from
 """
+
+
 def is_kind_of_class(obj, a_class):
     """
     Check if an object is an instance of, or inherits from, a specific class.
@@ -30,6 +32,8 @@ def is_kind_of_class(obj, a_class):
     obj_class = type(obj)
 
     return issubclass(obj_class, a_class)
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
