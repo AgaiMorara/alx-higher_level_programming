@@ -41,18 +41,6 @@ class MyInt(int):
     >>> b = 5
     >>> a != b
     False
-
-    # Valid: MyInt instances with negative values should return True for ==
-    >>> a = MyInt(-5)
-    >>> b = MyInt(-5)
-    >>> a == b
-    True
-
-    # Valid: MyInt instances with negative values should return False for !=
-    >>> a = MyInt(-5)
-    >>> b = MyInt(-5)
-    >>> a != b
-    False
     """
 
     def __eq__(self, other):
@@ -62,6 +50,7 @@ class MyInt(int):
     def __ne__(self, other):
         """Override the != operator to return opposite."""
         return super().__eq__(other)
+
 
 if __name__ == "__main__":
     import doctest
