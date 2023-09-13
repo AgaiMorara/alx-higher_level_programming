@@ -6,6 +6,11 @@ Pascals triangle of n
 
 
 def pascal_triangle(n):
+    """ The trick to the pascal triangle are patterns to its symmetry... We
+    will always start with one and end with one...for the middle elements
+    we will use the previous list add the element at
+    the ith position and one at i- 1 position to find the current position
+    """
     if n < 1:
         return []
     result = [[1]]
