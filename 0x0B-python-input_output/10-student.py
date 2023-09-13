@@ -4,7 +4,6 @@ writes a class that defines a student
 """
 
 
-
 class Student:
     """ Here are the fields of students
     """
@@ -22,9 +21,10 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs = None):
+    def to_json(self, attrs=None):
         """
-        Retrieves a dictionary representation of a student instance. and returns
+        Retrieves a dictionary representation of a student instance.
+        and returns
         it
         """
         if attrs is None:
