@@ -13,7 +13,6 @@ and now we print a normal square size 4:
 
 What if we pass 0:
 >>> print_square(0)
-<BLANKLINE>
 
 What if we pass a negative number:
 >>> print_square(-2)
