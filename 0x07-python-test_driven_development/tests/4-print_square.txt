@@ -1,0 +1,48 @@
+Lets test correct printing of Squares:
+=====================================
+
+We first import the module corrects:
+>>> print_square = __import__('4-print_square').print_square
+
+and now we print a normal square size 4:
+>>> print_square(4)
+####
+####
+####
+####
+
+What if we pass 0:
+>>> print_square(0)
+<BLANKLINE>
+
+What if we pass a negative number:
+>>> print_square(-2)
+Traceback (most recent call last):
+    ...
+    raise ValueError("Size must be >= 0")
+ValueError: Size must be >= 0
+
+What if we give it a float
+>>> print_square(9.8)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+>>> print_square(1)
+#
+
+>>> print_square(2 ** 3)
+########
+########
+########
+########
+########
+########
+########
+########
+
+A type that is not related to numbers:
+>>> print_square("alligator")
+Traceback (most recent call last):
+    ...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
