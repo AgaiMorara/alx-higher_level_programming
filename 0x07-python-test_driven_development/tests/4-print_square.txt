@@ -20,7 +20,7 @@ What if we pass a negative number:
 Traceback (most recent call last):
     ...
     raise ValueError("Size must be >= 0")
-ValueError: Size must be >= 0
+ValueError: size must be >= 0
 
 What if we give it a float
 >>> print_square(9.8)
