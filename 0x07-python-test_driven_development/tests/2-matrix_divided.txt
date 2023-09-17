@@ -1,0 +1,53 @@
+This document generates a list of tests for the divide matrix... (good practice required):
+==========================================================================================
+
+First, import the module:
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Basic case: divide the correct matrix with a real int or float:
+>>> matrix_divided([[2]], 7)
+[[0.29]]
+>>> matrix_divided([[1, 0], [0, 1]], 1)
+[[1.0, 0.0], [0.0, 1.0]]
+
+Division by zero:
+>>> matrix_divided([[1, 0], [0, 1]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+Basic test only floats:
+>>> matrix_divided([[1.5, 2.5], [3.5, 4.5]], 0.5)
+[[3.0, 5.0], [7.0, 9.0]]
+
+Basic Mixed types:
+>>> matrix_divided([[1.5, 2.5], [5, 4.5]], 0.5)
+[[3.0, 5.0], [10.0, 9.0]]
+
+Negative elements:
+>>> matrix_divided([[-1.5, -2.5], [5, -4.5]], 0.5)
+[[-3.0, -5.0], [10.0, -9.0]]
+
+Empty matrix:
+>>> matrix_divided([[]], 4)
+[[]]
+
+With mixed types of elements:
+>>> matrix_divided([[-1.5, 3], ['a', -4.5]], 0.5)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+With inconsistent sizes:
+>>> matrix_divided([[-1.5, 3], [6, -4.5], [9]], 0.5)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+If the divisor is not an integer:
+>>> matrix_divided([[-1.5, 3], [6, -4.5]], 'x')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
