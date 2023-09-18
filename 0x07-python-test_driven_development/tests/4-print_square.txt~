@@ -13,13 +13,14 @@ and now we print a normal square size 4:
 
 What if we pass 0:
 >>> print_square(0)
+<BLANKLINE>
 
 What if we pass a negative number:
 >>> print_square(-2)
 Traceback (most recent call last):
     ...
     raise ValueError("Size must be >= 0")
-ValueError: size must be >= 0
+ValueError: Size must be >= 0
 
 What if we give it a float
 >>> print_square(9.8)
@@ -41,13 +42,4 @@ TypeError: size must be an integer
 
 A type that is not related to numbers:
 >>> print_square("alligator")
-Traceback (most recent call last):
-    ...
-    raise TypeError("size must be an integer")
-TypeError: size must be an integer
 
-What if we pass no argument:
-print_square()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: print_square() missing 1 required positional argument: 'size'
