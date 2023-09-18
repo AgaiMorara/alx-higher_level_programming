@@ -1,0 +1,37 @@
+Check wether all texts behave appropriately under our function:
+==============================================================
+First import the function from module :
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Normal string\n")
+Normal string
+
+All Characters with which we should add double carriage returns:
+===============================================================
+>>> text_indentation (". Fullstop, : semicloln, ? question mark")
+.
+<BLANKLINE>
+Fullstop, :
+<BLANKLINE>
+semicloln, ?
+<BLANKLINE>
+question mark
+
+If arg is no string:
+===================
+>>> text_indentation(9)
+Traceback (most recent call last):
+  ...
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+
+If all Chars are bundled together:
+=================================
+>>> text_indentation(":?., were bundled together\n")
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+.
+<BLANKLINE>
+, were bundled together
