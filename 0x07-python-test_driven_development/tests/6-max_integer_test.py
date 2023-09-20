@@ -30,6 +30,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_singleItem(self):
         self.assertEqual(max_integer([-2030]), -2030, "expect -2030")
 
+    def test_beginwith(self):
+        self.assertEqual(max_integer([2030, 10, 20, 30, 1010]), 2030, "2030")
+
 
 if __name__ == '__main__':
     unittest.main()
