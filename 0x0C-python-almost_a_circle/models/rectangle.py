@@ -4,12 +4,13 @@ Rectangle that inherits from  Base
 """
 from .base import Base
 
+
 class Rectangle(Base):
     """
     Implementation of the rectangle
     """
 
-    def __init__ (self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initialization of the class
         """
@@ -46,6 +47,7 @@ class Rectangle(Base):
         if value < 1:
             raise ValueError("height must be > 0")
         self.__height = value
+
     @property
     def x(self):
         """Get the rectangle x-coordinate."""
