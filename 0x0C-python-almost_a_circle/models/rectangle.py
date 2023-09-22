@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+ """
 Rectangle that inherits from  Base
 """
 from .base import Base
@@ -48,12 +48,12 @@ class Rectangle(Base):
         self.__height = value
     @property
     def x(self):
-        """Get the x-coordinate of the rectangle's position."""
+        """Get the rectangle x-coordinate."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Set the x-coordinate of the rectangle's position."""
+        """Set the rectangle x-co-ordinate"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -62,12 +62,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Get the y-coordinate of the rectangle's position."""
+        """Get the rectangle Y-coordinate."""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Set the y-coordinate of the rectangle's position."""
+        """Set the y-coordinate."""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -79,7 +79,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Display the rectangle using the '#' character."""
+        """Display by '#'s correspoinding to area."""
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
