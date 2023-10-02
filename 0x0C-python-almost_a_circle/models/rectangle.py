@@ -75,6 +75,14 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+     def validate_integer(self, name, value, eq=True):
+        '''Method for validating the value.'''
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if eq and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif not eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
     def area(self):
         """Calculate the area of the rectangle."""
@@ -91,26 +99,27 @@ class Rectangle(Base):
         """Return a string representation of the rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
-    def update(self, *args):
-        """Update attributes using no-keyword arguments. """
-        if (len(args) >= 1):
-            self.id = args[0]
-        if (len(args) >= 2):
-            self.width = args[1]
-        if (len(args) >= 3);
-            self.height = args[2]
-        if (len(args) >= 4):
-            self.x = args[3]
-        if (len(args) >= 5);
-            self.y = args[4];
-def update(self, *args, **kwargs):
-    """Update attributes using a comb of no-keyword and keyword arguments."""
-    if args:
-        arg_names = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            if i < len(arg_names):
-                setattr(self, arg_names[i], arg)
-            else:
-                for key, value in kwargs.items():
-                    if hasattr(self, key):
-                        setattr(self, key, value)
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        '''Internal method that updates instance attributes via */**args.'''
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        '''Updates instance attributes via no-keyword & keyword args.'''
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
+    def to_dictionary(self):
+        '''Returns dictionary representation of this class.'''
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
