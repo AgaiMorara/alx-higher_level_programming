@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-'''
-Rectangle: based on 0-rectangle.py. Has private instance attributes width and h
-Contains a method width(self) that retrieves the width, and a setter width(sel
-Width must be an integer; otherwise, it raises a TypeError exception.
-Width must be greater than or equal to 0; otherwise, it raises a ValueError exce
-'''
-
 
 class Rectangle:
-    '''Rectangle class for representing rectangles'''
+    """Rectangle class with private width and height attributes."""
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        '''Initializes an instance of the Rectangle class.'''
+        """Initialize a new instance of the Rectangle class."""
         self.width = width
         self.height = height
+
+        Rectangle.number_of_instances += 1 
 
     @property
     def width(self):
@@ -44,15 +41,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Calculates and returns the area of the rectangle."""
+        """Calculate and return the area of the rectangle."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Calculates and returns the perimeter of the rectangle."""
+        """Calculate and return the perimeter of the rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle."""
+        """Return a string representation of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
         string = ""
@@ -61,10 +60,10 @@ class Rectangle:
         return string.rstrip("\n")
 
     def __repr__(self):
-        """Returns a string representation of the rectangle for debugging."""
+        """Return a string representation of the rectangle for recreation."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        '''Called when we want to delete the instance.'''
+        """Called when an instance of Rectangle is deleted."""
         print("Bye rectangle...")
-
+        Rectangle.number_of_instances -= 1  # Decrement class attribute
