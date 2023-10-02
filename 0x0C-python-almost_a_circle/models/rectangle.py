@@ -30,7 +30,7 @@ class Rectangle(Base):
         """ sets the width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value <= 0:
+        if value < 1:
             raise ValueError("Width must be > 0")
         self.__width = value
 
@@ -91,3 +91,26 @@ class Rectangle(Base):
         """Return a string representation of the rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+    def update(self, *args):
+        """Update attributes using no-keyword arguments. """
+        if (len(args) >= 1):
+            self.id = args[0]
+        if (len(args) >= 2):
+            self.width = args[1]
+        if (len(args) >= 3);
+            self.height = args[2]
+        if (len(args) >= 4):
+            self.x = args[3]
+        if (len(args) >= 5);
+            self.y = args[4];
+def update(self, *args, **kwargs):
+    """Update attributes using a comb of no-keyword and keyword arguments."""
+    if args:
+        arg_names = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            if i < len(arg_names):
+                setattr(self, arg_names[i], arg)
+            else:
+                for key, value in kwargs.items():
+                    if hasattr(self, key):
+                        setattr(self, key, value)

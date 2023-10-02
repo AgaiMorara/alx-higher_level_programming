@@ -12,4 +12,16 @@ class MyList(list):
     """
     def print_sorted(self):
         ''' sorts and prints the list using bubble sort'''
-        print(sorted(self))
+        cloned = self[:]
+        n = len(cloned)
+        changed = True
+
+        while changed:
+            changed = False
+            for i in range(1, n):
+                if cloned[i - 1] > cloned[i]:
+                    cloned[i - 1], cloned[i] = cloned[i], cloned[i - 1]
+                    swapped = True
+                if not changed:
+                    break
+        return cloned

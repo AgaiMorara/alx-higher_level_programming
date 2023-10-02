@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""
+writes a class that defines a student
+"""
+
+
+class student:
+    """ Here are the fields of students
+    """
+
+    def __init__(self, first_name, last_name, age):
+        """
+        Initialize the student
+        Args:
+        first_name(str): self_explanatory
+        last_name(str) : self explanatory
+        age (int) : today - dob
+        """
+
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        return self.__dict__
