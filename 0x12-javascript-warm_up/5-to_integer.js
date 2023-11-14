@@ -1,8 +1,6 @@
 #!/usr/bin/node
-let argument = process.arg[2];
+const argument = parseInt(process.argv[2]);
 
-const castarg = parseInt(dec, argument);
-
-if (castarg !== NaN)) {
-  console.log('My number :' + castarg);
-} else { console.log('Not a number'); }
+if (isNaN(argument)) {
+  console.log('Not a number');
+} else { console.log('My number: ' + argument); }
