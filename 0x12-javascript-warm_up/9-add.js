@@ -6,10 +6,6 @@ function add (a, b) {
 
 const firstarg = parseInt(process.argv[2]);
 const secondarg = parseInt(process.argv[3]);
+const result = add(firstarg, secondarg);
 
-if (isNaN(firstarg) || isNaN(secondarg)) {
-  console.log('Missing or invalid input. Please provide two integers.');
-} else {
-  const result = add(firstarg, secondarg);
-  console.log(firstarg + ' + ' + secondarg + ' = ' + result);
-}
+if (process.argv.length < 4) { console.log(result); } else { console.log(firstarg + ' + ' + secondarg + ' = ' + result); }
