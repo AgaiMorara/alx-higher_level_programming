@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+"""
+Same as previous query but not vulnerable to injections
+(Displays all values of a table in hbtn_03_0_usa that match a string)
+"""
+
+import MySQLdb
+from sys import argv
+
+if __name__ == "__main__":
+    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],passwd=argv[2], db=argv[3])
+    cursor = db.cursor()
+    times = cursor.execute("SELECT * FROM states where name=%s ORDER BY state", (argv[4], ))
+    [print(row) for row in results]
+    

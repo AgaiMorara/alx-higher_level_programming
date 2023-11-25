@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+"""
+Fiters states using ORM....
+"""
+import MySQLdb
+from sys import argv
+
+if __name__ == "__main__":
+    db = MySQLdb.connect(host='localhost', user=argv[1], passwd=argv[2], db = argv[3])
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER by states.id")
+    for state in cur.fetchall():
+        if state[1][0] == 'N':
+            print (state)
+    cursor.close()
+    db.close()
