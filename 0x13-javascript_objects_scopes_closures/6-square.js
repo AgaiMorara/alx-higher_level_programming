@@ -4,11 +4,11 @@
 const FormerSquare = require('./5-square');
 
 module.exports = class Square extends FormerSquare {
-  constructor(size) {
+  constructor (size) {
     super(size, size);
   }
 
-  charPrint(c) {
+  charPrint (c) {
     if (c === undefined) {
       c = 'X';
     }
@@ -18,4 +18,3 @@ module.exports = class Square extends FormerSquare {
     }
   }
 };
-
