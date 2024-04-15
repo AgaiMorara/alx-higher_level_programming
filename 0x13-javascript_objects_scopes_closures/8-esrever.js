@@ -2,14 +2,13 @@
 
 // Function that reverses a list
 exports.esrever = function (list) {
-    let index = list.length;
-    let new_list = [];
+  let index = list.length;
+  const newList = [];
 
-    while (index) {
-        new_list.push(list[index - 1]);
-        index--;
-    }
+  while (index) {
+    newList.push(list[index - 1]);
+    index--;
+  }
 
-    return new_list;
+  return newList;
 };
-
