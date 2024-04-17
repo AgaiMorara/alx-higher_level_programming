@@ -1,5 +1,3 @@
-#!/bin/bash
-# takes in a URL, sends a request to that URL, and displays the size of the body of the response
+#!/usr/bin/bash
+#fetches header of a given server response and extracts the value of content-Length
 curl -sI "$1" | awk 'tolower($1) == "content-length:" {print $2}'
-
-
