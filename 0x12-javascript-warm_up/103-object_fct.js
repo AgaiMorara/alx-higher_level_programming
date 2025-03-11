@@ -6,7 +6,7 @@ const myObject = {
 console.log(myObject);
 
 myObject.incr = function (){
-  this.value++; // Modify the existing 'value' property
+  this.value += 1; // Modify the existing 'value' property
 };
 myObject.incr();
 console.log(myObject);
