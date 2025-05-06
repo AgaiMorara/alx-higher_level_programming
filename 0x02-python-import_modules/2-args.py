@@ -1,18 +1,16 @@
 #!/usr/bin/python3
 import sys
+"""                                                                                                                                                                                                         
+ This script finds the lenght of argv, and returns the output                                                                                                                                               
+"""
+number = len(sys.argv) - 1
+if number == 1:
+    print(f"{number} argument:\n1: {sys.argv[1]}")
+elif number == 0:
+    print(f"{number} arguments.")
+else:
+    print(f"{number} arguments:")
+    for index, string in enumerate(sys.argv[1:]):
+        print(f"{index + 1}: {string}")
 
 
-def comline(argv):
-    argv = sys.argv[1:]
-    n = len(argv)
-
-    if n == 0:
-        print("0 arguments.")
-    else:
-        print("{:d} argument(s):".format(n))
-        for i, arg in enumerate(argv, start=1):
-            print("{:d}: {}".format(i, arg))
-
-
-if __name__ == "__main__":
-    comline(sys.argv)
