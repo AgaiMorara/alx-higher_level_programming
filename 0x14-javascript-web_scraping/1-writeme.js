@@ -1,22 +1,19 @@
 #!/usr/bin/node
-// script that writes a string to a file
-
-let fs = requie('fs')'
-let filePath = process.argv[2];
+// a script that writes to a file
+const fs = require('fs');
+const filePath = process.argv[2];
 let content = process.argv[3];
 
-if (!filePath){
-	console.log("Usage ./1-writeme.js <filePath> <content>");
-	return;
+if (!filePath) {
+  console.log('Usage:' + '<./1-writeme.js> <content>');
 }
 
-if (!content){
-	content = '';
+if (!content) {
+  content = '';
 }
 
-fs.writeFile(filePath, content , 'utf-8', (error) => {
-	if (error) {
-	console.log(error);
-	return;
-	}
+fs.writeFile(filePath,content ,'utf-8', (err) => {
+  if (err) {
+    console.error(err);
+  }
 });

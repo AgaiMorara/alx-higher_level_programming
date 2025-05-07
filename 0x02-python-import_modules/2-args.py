@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This script prints the number and list of arguments passed via the command line."""
+
+""" This script prints the number and list of arguments passed via the command line. """
 
 import sys
 
