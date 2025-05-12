@@ -8,14 +8,16 @@ def roman_to_int(roman_string):
     total = 0
     prev_value = 0
 
-    for char in roman_string:
-        current_value = roman_to_int_map[char]
+    if isinstance(roman_string, str):
 
-        if current_value > prev_value:
-            total += current_value - 2 * prev_value
-        else:
-            total += current_value
+        for char in roman_string:
+            current_value = roman_to_int_map[char]
 
-        prev_value = current_value
+            if current_value > prev_value:
+                total += current_value - 2 * prev_value
+            else:
+                total += current_value
+
+            prev_value = current_value
 
     return total
