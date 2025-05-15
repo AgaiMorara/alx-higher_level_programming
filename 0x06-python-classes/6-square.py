@@ -7,6 +7,7 @@ It provides methods for calculating the area and printing the square
 using the `#` symbol, taking the position into account.
 """
 
+
 class Square:
     """
     Represents a square with a size and a position.
@@ -82,7 +83,7 @@ class Square:
         """
         if (not isinstance(value, tuple) or
             len(value) != 2 or
-            not all(isinstance(val, int) and val >= 0 for val in value)):
+                not all(isinstance(val, int) and val >= 0 for val in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
