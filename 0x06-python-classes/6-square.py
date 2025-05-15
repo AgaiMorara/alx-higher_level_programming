@@ -17,8 +17,8 @@ class Square:
             TypeError: If size is not an integer or position is not a tuple.
             ValueError: If size is less than 0 or position  not in 1st quad
         """
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
